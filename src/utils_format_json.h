@@ -32,17 +32,19 @@
 #include "plugin.h"
 
 #ifndef JSON_GAUGE_FORMAT
-#define JSON_GAUGE_FORMAT GAUGE_FORMAT
+# define JSON_GAUGE_FORMAT GAUGE_FORMAT
 #endif
 
-int format_json_initialize(char *buffer, size_t *ret_buffer_fill,
-                           size_t *ret_buffer_free);
-int format_json_value_list(char *buffer, size_t *ret_buffer_fill,
-                           size_t *ret_buffer_free, const data_set_t *ds,
-                           const value_list_t *vl, int store_rates);
-int format_json_finalize(char *buffer, size_t *ret_buffer_fill,
-                         size_t *ret_buffer_free);
-int format_json_notification(char *buffer, size_t buffer_size,
-                             notification_t const *n);
-
+int format_json_initialize (char *buffer,
+    size_t *ret_buffer_fill, size_t *ret_buffer_free);
+int format_json_value_list (char *buffer,
+    size_t *ret_buffer_fill, size_t *ret_buffer_free,
+    const data_set_t *ds, const value_list_t *vl, int store_rates);
+int format_json_finalize (char *buffer,
+    size_t *ret_buffer_fill, size_t *ret_buffer_free);
+int format_json_notification (char *buffer, size_t buffer_size,
+    notification_t const *n);
+int value_list_to_json(char *buffer, size_t buffer_size, const data_set_t *ds, const value_list_t *vl, int store_rates);
 #endif /* UTILS_FORMAT_JSON_H */
+
+
